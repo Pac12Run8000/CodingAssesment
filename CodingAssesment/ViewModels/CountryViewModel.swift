@@ -1,14 +1,19 @@
 import Foundation
 
 class CountryViewModel {
+    private let countryProvider: CountryDataProvider
     private(set) var countries: [CountryCellViewModel] = []
 
     var onDataUpdated: (() -> Void)?
 
+    init(countryProvider: CountryDataProvider = CountryDataManager.shared) { // Default to singleton
+        self.countryProvider = countryProvider
+    }
+
     func fetchCountries() {
-        let countryModels = CountryDataManager.fetchCountries() // ✅ FIXED
+        let countryModels = countryProvider.fetchCountries()
         self.countries = countryModels.map { CountryCellViewModel(country: $0) }
-        onDataUpdated?() // ✅ Notify ViewController to reload data
+        onDataUpdated?()
     }
 
     func numberOfRows() -> Int {
