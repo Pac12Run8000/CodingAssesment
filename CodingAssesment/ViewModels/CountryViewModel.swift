@@ -1,19 +1,27 @@
 import Foundation
 
 class CountryViewModel {
-    private let countryProvider: CountryDataProvider
+    private let dataProvider: ProtocolDataProvider
     private(set) var countries: [CountryCellViewModel] = []
 
     var onDataUpdated: (() -> Void)?
 
-    init(countryProvider: CountryDataProvider = CountryDataManager.shared) { // Default to singleton
-        self.countryProvider = countryProvider
+    init(dataProvider: ProtocolDataProvider = CountryDataManager.shared) {
+        self.dataProvider = dataProvider
     }
 
     func fetchCountries() {
-        let countryModels = countryProvider.fetchCountries()
-        self.countries = countryModels.map { CountryCellViewModel(country: $0) }
-        onDataUpdated?()
+        dataProvider.fetchCountries { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let countryModels):
+                    self?.countries = countryModels.map { CountryCellViewModel(country: $0) }
+                    self?.onDataUpdated?()
+                case .failure(let error):
+                    print("Error fetching countries: \(error.localizedDescription)")
+                }
+            }
+        }
     }
 
     func numberOfRows() -> Int {
@@ -24,4 +32,3 @@ class CountryViewModel {
         return countries[index]
     }
 }
-

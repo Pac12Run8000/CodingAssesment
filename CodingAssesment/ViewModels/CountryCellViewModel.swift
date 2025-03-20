@@ -2,7 +2,7 @@ import UIKit
 
 class CountryCellViewModel {
     let countryName: String
-    let region: String
+    let region: Region
     let capital: String
     let code: String
 

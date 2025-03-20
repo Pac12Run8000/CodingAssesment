@@ -1,46 +1,44 @@
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var tableView:UITableView!
     
-    private let viewModel = CountryViewModel()
+    
+    private var viewModel = CountryViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView.dataSource = self
+
         tableView.delegate = self
-        
+        tableView.dataSource = self
         tableView.register(UINib(nibName: "CountryCell", bundle: nil), forCellReuseIdentifier: "CountryCell")
-        
+
         viewModel.onDataUpdated = { [weak self] in
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
+            self?.tableView.reloadData()
         }
-        viewModel.fetchCountries()
+
+        viewModel.fetchCountries() // Fetch API data
     }
-    
-    
+}
+
+// MARK: - UITableViewDelegate & UITableViewDataSource
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return viewModel.numberOfRows()
+        return viewModel.numberOfRows()
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CountryCell", for: indexPath) as! CountryCell
-        
-        // Assuming you have a Country model, configure the cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CountryCell", for: indexPath) as? CountryCell else {
+            fatalError("CountryCell not found")
+        }
+
         let cellViewModel = viewModel.viewModelForCell(at: indexPath.row)
         cell.configure(with: cellViewModel)
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 126  // Set this to your preferred height
+        return 126 // Adjust as needed
     }
-
-
-
 }
-
