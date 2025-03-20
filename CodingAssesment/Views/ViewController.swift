@@ -1,7 +1,5 @@
 import UIKit
 
-
-
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView:UITableView!
@@ -21,7 +19,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 self?.tableView.reloadData()
             }
         }
-
         viewModel.fetchCountries()
     }
     
