@@ -22,8 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 fatalError("ViewController not found in Storyboard")
             }
         
-//        let viewModel = CountryViewModel(dataProvider: MockDataProvider()) // Inject MockData
-            let viewModel = CountryViewModel(dataProvider: CountryDataManager.shared) // Inject API Data
+        let viewModel = CountryViewModel(dataProvider: MockDataProvider()) // Inject MockData
+//            let viewModel = CountryViewModel(dataProvider: CountryDataManager.shared) // Inject API Data
             viewController.viewModel = viewModel // Property Injection
 
             let navigationController = UINavigationController(rootViewController: viewController)
