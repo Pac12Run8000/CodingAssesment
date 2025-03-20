@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09C644582D8BC2C900DC36E0 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C644572D8BC2C900DC36E0 /* CountryCell.xib */; };
+		09C6445A2D8BD22300DC36E0 /* CountryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C644592D8BD22300DC36E0 /* CountryCellViewModel.swift */; };
 		09E1E2222D8B2F410078C63C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1E2212D8B2F410078C63C /* AppDelegate.swift */; };
 		09E1E2242D8B2F410078C63C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1E2232D8B2F410078C63C /* SceneDelegate.swift */; };
 		09E1E2262D8B2F410078C63C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1E2252D8B2F410078C63C /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		09C644572D8BC2C900DC36E0 /* CountryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
+		09C644592D8BD22300DC36E0 /* CountryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCellViewModel.swift; sourceTree = "<group>"; };
 		09E1E21E2D8B2F410078C63C /* CodingAssesment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodingAssesment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E1E2212D8B2F410078C63C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09E1E2232D8B2F410078C63C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				09E1E2392D8B32AD0078C63C /* CountryViewModel.swift */,
+				09C644592D8BD22300DC36E0 /* CountryCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				09E1E2222D8B2F410078C63C /* AppDelegate.swift in Sources */,
 				09E1E2242D8B2F410078C63C /* SceneDelegate.swift in Sources */,
 				09E1E23A2D8B32AE0078C63C /* CountryViewModel.swift in Sources */,
+				09C6445A2D8BD22300DC36E0 /* CountryCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

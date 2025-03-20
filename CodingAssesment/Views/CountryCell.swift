@@ -7,11 +7,11 @@ class CountryCell: UITableViewCell {
     @IBOutlet weak var capitalLabel: UILabel!
     @IBOutlet weak var codeLabel: UILabel!
 
-    func configure(with country: Country) {
-        nameLabel.text = country.name
-        regionLabel.text = "Region: \(country.region)"
-        capitalLabel.text = "Capital: \(country.capital)"
-        codeLabel.text = "Code: \(country.code)"
+    func configure(with viewModel: CountryCellViewModel) {
+        nameLabel.text = viewModel.countryName
+        regionLabel.text = "Region: \(viewModel.region)"
+        capitalLabel.text = "Capital: \(viewModel.capital)"
+        codeLabel.text = "Code: \(viewModel.code)"
     }
 }
 

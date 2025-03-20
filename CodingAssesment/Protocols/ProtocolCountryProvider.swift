@@ -1,5 +1,5 @@
 import Foundation
 
 protocol CountryDataProvider {
-    func fetchCountries() -> [Country]
+    static func fetchCountries() -> [Country]
 }
