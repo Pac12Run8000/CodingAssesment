@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09C644582D8BC2C900DC36E0 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C644572D8BC2C900DC36E0 /* CountryCell.xib */; };
 		09E1E2222D8B2F410078C63C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1E2212D8B2F410078C63C /* AppDelegate.swift */; };
 		09E1E2242D8B2F410078C63C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1E2232D8B2F410078C63C /* SceneDelegate.swift */; };
 		09E1E2262D8B2F410078C63C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E1E2252D8B2F410078C63C /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09C644572D8BC2C900DC36E0 /* CountryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
 		09E1E21E2D8B2F410078C63C /* CodingAssesment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodingAssesment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E1E2212D8B2F410078C63C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09E1E2232D8B2F410078C63C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				09E1E23C2D8B33240078C63C /* CountryCell.swift */,
 				09E1E2252D8B2F410078C63C /* ViewController.swift */,
 				09E1E2272D8B2F410078C63C /* Main.storyboard */,
+				09C644572D8BC2C900DC36E0 /* CountryCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09C644582D8BC2C900DC36E0 /* CountryCell.xib in Resources */,
 				09E1E22B2D8B2F450078C63C /* Assets.xcassets in Resources */,
 				09E1E22E2D8B2F450078C63C /* Base in Resources */,
 				09E1E2292D8B2F410078C63C /* Base in Resources */,
