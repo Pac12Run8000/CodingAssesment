@@ -49,6 +49,7 @@ enum Region: String, Codable {
     case oc = "OC"
     case regionAS = "AS"
     case sa = "SA"
+    case ja = "JA"
 }
 
 typealias Countries = [Country]

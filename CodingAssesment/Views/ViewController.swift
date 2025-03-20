@@ -6,6 +6,7 @@ class ViewController: UIViewController {
     
     
     private var viewModel = CountryViewModel()
+//    private var viewModel = CountryViewModel(dataProvider: MockDataProvider())
 
     override func viewDidLoad() {
         super.viewDidLoad()
