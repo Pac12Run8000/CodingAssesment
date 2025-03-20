@@ -5,25 +5,27 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView:UITableView!
-    let viewModel = CountryViewModel()
+    private var viewModel: CountryViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.viewModel = CountryViewModel(dataProvider: CountryDataManager())
+        
         tableView.dataSource = self
         tableView.delegate = self
-        
         tableView.reloadData()
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return viewModel.numberOfCountries()  // ✅ Returns 4
+            return viewModel.numberOfCountries()
         }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CountryCell", for: indexPath) as! CountryCell
         let country = viewModel.country(at: indexPath.row)
-        cell.configure(with: country)  // ✅ Pass the country data to the cell
+        cell.configure(with: country)  
         print("Cell height for row \(indexPath.row): \(cell.frame.height)")
 
         return cell

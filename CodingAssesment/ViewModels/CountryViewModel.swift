@@ -1,12 +1,14 @@
 import Foundation
 
 class CountryViewModel {
-    var countries: [Country] = [
-        Country(name: "Canada", region: "North America", capital: "Ottawa", code: "CAN"),
-        Country(name: "Germany", region: "Europe", capital: "Berlin", code: "DEU"),
-        Country(name: "Japan", region: "Asia", capital: "Tokyo", code: "JPN"),
-        Country(name: "Brazil", region: "South America", capital: "Brasília", code: "BRA")
-    ]
+    private let dataProvider: CountryDataProvider
+    
+    private var countries: [Country] = []
+    
+    init(dataProvider: CountryDataProvider) {
+        self.dataProvider = dataProvider
+        self.countries = dataProvider.fetchCountries()
+    }
     
     func numberOfCountries() -> Int {
         return countries.count
