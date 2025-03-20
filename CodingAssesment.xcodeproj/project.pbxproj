@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		090E72822D8CD82B00C1F24B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090E72812D8CD82B00C1F24B /* Constants.swift */; };
 		09C644582D8BC2C900DC36E0 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09C644572D8BC2C900DC36E0 /* CountryCell.xib */; };
 		09C6445A2D8BD22300DC36E0 /* CountryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C644592D8BD22300DC36E0 /* CountryCellViewModel.swift */; };
 		09C6445D2D8BE7AA00DC36E0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C6445C2D8BE7AA00DC36E0 /* NetworkService.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		090E72812D8CD82B00C1F24B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		09C644572D8BC2C900DC36E0 /* CountryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
 		09C644592D8BD22300DC36E0 /* CountryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCellViewModel.swift; sourceTree = "<group>"; };
 		09C6445C2D8BE7AA00DC36E0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -55,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		090E72802D8CD80B00C1F24B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				090E72812D8CD82B00C1F24B /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		09C6445B2D8BE78700DC36E0 /* NetworkingService */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +92,7 @@
 		09E1E2202D8B2F410078C63C /* CodingAssesment */ = {
 			isa = PBXGroup;
 			children = (
+				090E72802D8CD80B00C1F24B /* Utilities */,
 				09C6445B2D8BE78700DC36E0 /* NetworkingService */,
 				09E1E2402D8BAE520078C63C /* Protocols */,
 				09E1E23B2D8B330A0078C63C /* Views */,
@@ -217,6 +228,7 @@
 				09E1E2242D8B2F410078C63C /* SceneDelegate.swift in Sources */,
 				09E1E23A2D8B32AE0078C63C /* CountryViewModel.swift in Sources */,
 				09C6445A2D8BD22300DC36E0 /* CountryCellViewModel.swift in Sources */,
+				090E72822D8CD82B00C1F24B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
