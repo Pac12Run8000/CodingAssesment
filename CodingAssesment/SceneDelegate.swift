@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let viewController = storyboard.instantiateViewController(withIdentifier: Constants.ViewControllerIdentifiers.viewController) as? ViewController else {
             fatalError(Constants.Errors.viewControllerNotFound)
         }
-    
+//        let viewModel = CountryViewModel(dataProvider: MockDataProvider())
         let viewModel = CountryViewModel(dataProvider: CountryDataManager.shared) // Inject Data
         viewController.viewModel = viewModel // Property Injection
 

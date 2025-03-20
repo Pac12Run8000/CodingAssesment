@@ -5,15 +5,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView:UITableView!
     
     var viewModel: CountryViewModel?
-//    private var viewModel = CountryViewModel()
-//    private var viewModel = CountryViewModel(dataProvider: MockDataProvider())
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "CountryCell", bundle: nil), forCellReuseIdentifier: "CountryCell")
+        tableView.register(UINib(nibName: Constants.ViewControllerIdentifiers.countryCellNibName, bundle: nil), forCellReuseIdentifier: Constants.ViewControllerIdentifiers.CellForCellReuseIdentifier)
 
         viewModel?.onDataUpdated = { [weak self] in
             self?.tableView.reloadData()
@@ -30,9 +28,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "CountryCell", for: indexPath) as? CountryCell,
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ViewControllerIdentifiers.CellForCellReuseIdentifier, for: indexPath) as? CountryCell,
                   let cellViewModel = viewModel?.viewModelForCell(at: indexPath.row) else {
-                fatalError("CountryCell not found")
+            fatalError(Constants.Errors.countryCellNotFound)
             }
             
             cell.configure(with: cellViewModel)
