@@ -5,10 +5,9 @@ class CountryDataManager: ProtocolDataProvider {
 
     private var apiURL: URL? {
         var components = URLComponents()
-        components.scheme = "https"
-        components.host = "gist.githubusercontent.com"
-        components.path = "/peymano-wmt/32dcb892b06648910ddd40406e37fdab/raw/db25946fd77c5873b0303b858e861ce724e0dcd0/countries.json"
-        
+        components.scheme = Constants.Url.scheme
+        components.host = Constants.Url.hostGist
+        components.path = Constants.Url.pathGist
         return components.url
     }
 
